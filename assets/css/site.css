@@ -1,0 +1,19 @@
+.large-modal{
+    --bs-modal-width:750px !important
+}
+.xl-modal{
+    --bs-modal-width:1080px !important
+}
+
+.profile-img {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 75px;
+    width: 100%; 
+  }
+  
+  #pdf-canvas {
+    direction: ltr;
+    width: 100%;
+  }

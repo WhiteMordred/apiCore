@@ -1,0 +1,15 @@
+Flask
+flask_mail
+python-dotenv
+Werkzeug
+PyMongo
+flask_cors
+cryptography
+bcrypt
+PyJWT
+jinja2
+opencv-python
+opencv-contrib-python
+pytesseract
+py-cpuinfo
+accelerate

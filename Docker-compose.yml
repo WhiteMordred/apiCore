@@ -1,0 +1,45 @@
+version: '3'
+services:
+  # flask-app:
+  #   build:
+  #     context: . 
+  #     dockerfile: Dockerfile 
+  #   container_name: flask-container
+  #   env_file:
+  #     - .env
+  #   ports:
+  #     - "5000:5000"
+  #   environment:
+  #     - MONGO_URI=${MONGO_URI}
+  #     - MAIL_SERVER=${MAIL_SERVER}
+  #     - MAIL_PORT=${MAIL_PORT}
+  #     - MAIL_USE_TLS=${MAIL_USE_TLS}
+  #     - MAIL_USE_SSL${MAIL_USE_SSL}
+  #     - MAIL_USERNAME=${MAIL_USERNAME}
+  #     - MAIL_PASSWORD=${MAIL_PASSWORD}
+  #   depends_on:
+  #     - mongomongo
+  #   networks:
+  #     - app-network
+
+  appcoremongo:
+    image: mongo:latest
+    container_name: appcoremongo
+    env_file:
+      - .env
+    ports:
+      - "27017:27017"  
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+    volumes:
+      - mongodb-data:/data/db 
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mongodb-data:
